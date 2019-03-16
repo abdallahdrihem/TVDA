@@ -1,8 +1,70 @@
+<!DOCTYPE html>
 <html>
-    <head>
-    </head>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css"/>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-        </body> 
-            
-        </body>
-    </html>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Visualisations interactives de données</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="./index.html">Statistiques<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./retaite/retraite.html">Retraite</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./airPollution/airpollution.html">Air Pollution</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    </br>
+  <div class="container">
+    <div class="card border-primary mb-3"> 
+    <div class="card">
+  <div class="card-header">
+   <h5 class="card-title text-center">Les étudiants inscrit dans Licence et Master</h5>
+  </div>
+  <div class="card-body">
+  <svg class="chart"></svg>
+  <script src="./statistique/statistiqueLMD.js"></script>
+   <div class="col text-center">
+   <a class="btn btn-primary text-center" href="./pieChart/pieChartLMD.html" role="button"> Percentage des étudiants inscrit à Licence et Master</a>
+    </div>
+      </div>
+</div>
+  </br></br>
+       <div class="card">
+        <div class="card-header">
+            <h5 class="card-title text-center">Les étudiants inscrit en IUT</h5>
+        </div>
+          <div class="card-body">
+              <svg class="chart2"></svg>
+              <script src="./statistique/statistiqueIUT.js"></script>
+          <div class="col text-center">
+           <a class="btn btn-primary text-center" href="./pieChart/pieChartIUT.html" role="button">Percentage des étudiants inscrit en IUT</a>
+         </div>
+      </div>
+</div>
+</div>
+  </div>
+</body>
+</html>
