@@ -17,7 +17,7 @@ var xAxis = d3.svg.axis()
 var yAxis = d3.svg.axis()
 .scale(y)
 .orient("left")
-.tickFormat(function(d) { return dollarFormatter(d); });
+.tickFormat(function(d) { return ageFormatter(d); });
 
 var chart2 = d3.select(".chart2")
 .attr("width", width + margin.left + margin.right)
@@ -70,7 +70,7 @@ bar.append("text")
   .attr("x", x.rangeBand() / 2)
   .attr("y", function(d) { return y(d.end) + 5; })
   .attr("dy", function(d) { return ((d.class=='negative') ? '-' : '') + ".75em" })
-  .text(function(d) { return dollarFormatter(d.end - d.start);});
+  .text(function(d) { return ageFormatter(d.end - d.start);});
 
 bar.filter(function(d) { return d.class != "total" }).append("line")
   .attr("class", "connector")
@@ -85,7 +85,7 @@ d.inscritsIUT = +d.inscritsIUT;
 return d;
 }
 
-function dollarFormatter(n) {
+function ageFormatter(n) {
 n = Math.round(n);
 var result = n;
 if (Math.abs(n) > 1000) {

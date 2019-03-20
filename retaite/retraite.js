@@ -1,6 +1,6 @@
 
     var svg = d3.select("svg"),
-    margin = 200,
+    margin = 180,
     width = svg.attr("width") - margin,
     height = svg.attr("height") - margin;
 
@@ -19,20 +19,21 @@ d3.csv("./retraite.csv", function(error, data) {
 
     x.domain(data.map(function(d) { return d.year; }));
     y.domain([0, d3.max(data, function(d) { return d.value; })]);
-
+// text Année ------ 
     g.append("g")
      .attr("transform", "translate(0," + height + ")")
      .call(d3.axisBottom(x))
      .append("text")
-     .attr("y", height - 250)
+     .attr("y", height - 280)
      .attr("x", width - 100)
      .attr("text-anchor", "end")
+     .attr("font-size", "12px")
      .attr("stroke", "black")
      .text("Année");
 
     g.append("g")
      .call(d3.axisLeft(y).tickFormat(function(d){
-         return "$" + d;
+         return d;
      }).ticks(10))
      .append("text")
      .attr("transform", "rotate(-90)")
@@ -40,6 +41,7 @@ d3.csv("./retraite.csv", function(error, data) {
      .attr("dy", "-5.1em")
      .attr("text-anchor", "end")
      .attr("stroke", "black")
+     .attr("font-size", "12px")
      .text("L'Age");
 
     g.selectAll(".bar")

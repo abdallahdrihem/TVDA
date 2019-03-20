@@ -1,9 +1,9 @@
 .bar.total rect {
-  fill: steelblue;
+  fill: #2980b9;
 }
 
 .bar.positive rect {
-  fill: darkolivegreen;
+  fill: #27ae60;
 }
 .bar.negative rect {
   fill: crimson;
@@ -45,9 +45,9 @@
   border-radius: 0.3rem;
   outline: 0;
 }
-
+/* Start PieChart Style  */
 .arc text {
-  font: 12px sans-serif;
+  font: 15px sans-serif;
   text-anchor: middle;
 }
 
@@ -61,10 +61,12 @@
   font-weight: bold;
 }
 
+/* fin PieChart Style  */
+
 .bar {
-    fill: steelblue;
+    fill: #3498db;
 }
 
 .highlight {
-    fill: orange;
+    fill: #f1c40f;
 }
