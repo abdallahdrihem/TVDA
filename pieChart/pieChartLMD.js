@@ -124,7 +124,7 @@ svg.append('text').text('2018')
     var label = d3.arc()
                   .outerRadius(radius)
                   .innerRadius(radius - 80);
-    d3.csv("./pieChartLMD.csv", function(error, data) {
+    d3.csv("./pieChart.csv", function(error, data) {
         if (error) {
             throw error;
         }
@@ -135,7 +135,7 @@ svg.append('text').text('2018')
 
         arc.append("path")
            .attr("d", path)
-           .attr("fill", function(d) { return color(d.data.browser); });
+           .attr("fill", function(d) { return color(d.data.year); });
     
         console.log(arc)
     
@@ -143,11 +143,9 @@ svg.append('text').text('2018')
            .attr("transform", function(d) { 
                     return "translate(" + label.centroid(d) + ")"; 
             })
-           .text(function(d) { return d.data.percent + '%' ; });
+           .text(function(d) { 
+           
+               return  parseFloat(d.data.percent * 100 / 513).toFixed(2) + '%' ; });
         });
 
-      /*  svg.append("g")
-           .attr("transform", "translate(" + (width / 2 - 120) + "," + 20 + ")")
-           .append("text")
-           .text("Browser use statistics - Jan 2017")
-           .attr("class", "title")*/
+
